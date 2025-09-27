@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dx4ilu6fg5uvb"]
+[gd_scene load_steps=25 format=4 uid="uid://dx4ilu6fg5uvb"]
 
 [ext_resource type="Script" uid="uid://dfqvgevce4wsl" path="res://player.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://wxqj3qtco11p" path="res://scenes/main.gd" id="1_eb6dy"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scenes/CurrentScoreLabel_script.gd" id="8_eb6dy"]
 [ext_resource type="PackedScene" path="res://scenes/potion.tscn" id="10_choun"]
 [ext_resource type="Script" uid="uid://dd7df7rdwqkx" path="res://scenes/bossteleport.gd" id="13_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://cihd4vnublewq" path="res://scenes/enemy_2.tscn" id="15_jkv2x"]
 [ext_resource type="Script" uid="uid://c1cwxucrrvdar" path="res://script/enemy_2.gd" id="16_jbj1t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6xl0"]
@@ -264,7 +265,7 @@ z_index = 1
 position = Vector2(1693, 1471)
 script = ExtResource("1_0wfyh")
 hearthSprite = ExtResource("1_ya4ey")
-enemyScene = ExtResource("4_jyhfs")
+enemyScene = ExtResource("15_jkv2x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 scale = Vector2(0.4861592, 0.4861592)
@@ -328,6 +329,11 @@ tile_set = SubResource("TileSet_tbgi4")
 
 [node name="Enemies" type="Node" parent="."]
 
+[node name="Enemy1" parent="Enemies" instance=ExtResource("4_jyhfs")]
+position = Vector2(5134, 12056)
+scale = Vector2(1.7505332, 1.7505332)
+script = ExtResource("16_jbj1t")
+
 [node name="Potion" parent="." instance=ExtResource("10_choun")]
 position = Vector2(1771, 1563)
 
@@ -389,9 +395,12 @@ script = ExtResource("13_a8y0u")
 position = Vector2(-12.5, -63.5)
 shape = SubResource("RectangleShape2D_eb6dy")
 
-[node name="Enemy1" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(5091, 12012)
-script = ExtResource("16_jbj1t")
+[node name="Label" type="Label" parent="."]
+offset_left = 1808.0
+offset_top = 1405.0
+offset_right = 2006.0
+offset_bottom = 1428.0
+text = "BOSS ON THE PENINSULA"
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

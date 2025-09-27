@@ -3,14 +3,14 @@ extends RigidBody2D
 const SPEED = 75.0
 @export var hit = false
 var hit_count = 0
-var maxHit = 4000
+var maxHit = 500
+var flag = false
 
 func _ready() -> void:
 	lock_rotation = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	maxHit -= GameState.level
 	var player = get_node("/root/Node2D/Player")
 	var playerPos = player.position
 	if hit_count >= maxHit:
@@ -29,6 +29,9 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		if !flag:
+			flag = true
+			maxHit -= GameState.level
 		print("Decrease health")
 		body.health -= 1
 		await get_tree().create_timer(3.0).timeout

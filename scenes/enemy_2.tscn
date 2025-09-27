@@ -1,32 +1,33 @@
 [gd_scene load_steps=5 format=3 uid="uid://cihd4vnublewq"]
 
 [ext_resource type="Script" uid="uid://sko13jqr4ft8" path="res://script/enemy_1.gd" id="1_fi5i3"]
-[ext_resource type="Texture2D" uid="uid://x8hehja1rur3" path="res://characters/boss1.png" id="2_fi5i3"]
+[ext_resource type="Texture2D" uid="uid://cgoh33dsf0ny8" path="res://characters/enemy.png" id="2_oh86k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1412"]
 size = Vector2(105, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejytf"]
-size = Vector2(104, 123)
+size = Vector2(126.28572, 152.62247)
 
 [node name="Enemy1" type="RigidBody2D"]
 mass = 0.001
 script = ExtResource("1_fi5i3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.8552306, 0.8552306)
-texture = ExtResource("2_fi5i3")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_oh86k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 0)
-scale = Vector2(0.8552306, 0.8552306)
+scale = Vector2(0.7, 0.7)
 shape = SubResource("RectangleShape2D_a1412")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(0.8472041, 0.8303522)
+scale = Vector2(0.7, 0.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-8, -0.5)
+position = Vector2(-8.571428, -4.2857137)
+scale = Vector2(0.80383104, 0.8858826)
 shape = SubResource("RectangleShape2D_ejytf")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
