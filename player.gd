@@ -6,6 +6,8 @@ const SPEED = 300.0
 @export var hearthSprite: Texture2D
 @export var enemyScene: PackedScene
 @export var spawnRadius: float = 500.0
+@onready var cam = $Camera2D
+var base_zoom = Vector2(1,1)
 
 var maxHealth = 5
 var healthRestore = 0
@@ -41,6 +43,10 @@ func _process(delta: float) -> void:
 	if Time.get_ticks_msec() - enemyspawn >= 10000:
 		enemyspawn = Time.get_ticks_msec()
 		spawnEnemy()
+	var percent = clamp(100-(GameState.level*5), 30, 100)
+	var factor = 100.0/percent
+	cam.zoom = base_zoom * factor
+	
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.

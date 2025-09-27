@@ -3,7 +3,7 @@ extends RigidBody2D
 const SPEED = 75.0
 @export var hit = false
 var hit_count = 0
-var maxHit = 250
+var maxHit = 4000
 
 func _ready() -> void:
 	lock_rotation = true
