@@ -13,11 +13,10 @@ config_version=5
 config/name="OM Game"
 run/main_scene="uid://dx4ilu6fg5uvb"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://icon.svg"
 
 [autoload]
 
-GameState="*res://GameState.gd"
+GameState="*res://script/GameState.gd"
 
 [display]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://26pkdyoiwumj"]
 
 [ext_resource type="Texture2D" uid="uid://bgaex6o77ja7c" path="res://ramka/ramka.png" id="1_fslcg"]
-[ext_resource type="Script" uid="uid://dhxpmwgjbg6gk" path="res://scenes/titlebar.gd" id="2_p88lf"]
+[ext_resource type="Script" uid="uid://dhxpmwgjbg6gk" path="res://script/titlebar.gd" id="2_p88lf"]
 [ext_resource type="Texture2D" uid="uid://iljqovgo5mjn" path="res://ramka/guzik.png" id="3_l5o64"]
 [ext_resource type="Texture2D" uid="uid://3kbom2wwyb2a" path="res://life/life.png" id="4_holu6"]
-[ext_resource type="PackedScene" uid="uid://cgdb6yujyqhqs" path="res://scenes/enemy.tscn" id="5_8e0rh"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="5_8e0rh"]
 
 [node name="titlebar" type="TextureButton"]
 offset_left = 124.0

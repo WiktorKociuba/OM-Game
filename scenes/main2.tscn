@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=4 uid="uid://cf71l13q5nxbm"]
 
-[ext_resource type="Script" uid="uid://dv8yrynwv0rjm" path="res://script/player.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dfqvgevce4wsl" path="res://script/player.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://di3d0fwl8762s" path="res://characters/main character.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://b7k6opr6wn12b" path="res://txt/groundtxt.png" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://bgaex6o77ja7c" path="res://ramka/ramka.png" id="4_o6xl0"]
-[ext_resource type="Script" uid="uid://dhxpmwgjbg6gk" path="res://scenes/titlebar.gd" id="5_tipki"]
+[ext_resource type="Script" uid="uid://dhxpmwgjbg6gk" path="res://script/titlebar.gd" id="5_tipki"]
 [ext_resource type="Texture2D" uid="uid://iljqovgo5mjn" path="res://ramka/guzik.png" id="6_85g3d"]
 [ext_resource type="Texture2D" uid="uid://3kbom2wwyb2a" path="res://life/life.png" id="7_o6xl0"]
 
