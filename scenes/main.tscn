@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dx4ilu6fg5uvb"]
+[gd_scene load_steps=25 format=4 uid="uid://dx4ilu6fg5uvb"]
 
 [ext_resource type="Script" uid="uid://dfqvgevce4wsl" path="res://player.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://wxqj3qtco11p" path="res://scenes/main.gd" id="1_eb6dy"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" path="res://scenes/potion.tscn" id="10_choun"]
 [ext_resource type="Script" uid="uid://dd7df7rdwqkx" path="res://scenes/bossteleport.gd" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://cihd4vnublewq" path="res://scenes/enemy_2.tscn" id="15_jkv2x"]
+[ext_resource type="Script" uid="uid://c1cwxucrrvdar" path="res://script/enemy_2.gd" id="16_jbj1t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6xl0"]
 animations = [{
@@ -347,5 +348,6 @@ shape = SubResource("RectangleShape2D_eb6dy")
 [node name="Enemy1" parent="." instance=ExtResource("15_jkv2x")]
 position = Vector2(5122, 12103)
 scale = Vector2(1.8434881, 1.8434881)
+script = ExtResource("16_jbj1t")
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
