@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di3d0fwl8762s"
-path="res://.godot/imported/pixil-frame-0.png-a2c3032e8be0ecd8b1783010d43da644.ctex"
+uid="uid://iljqovgo5mjn"
+path="res://.godot/imported/guzik.png-885a81758f1bffee2d587b447db7b749.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/pixil-frame-0.png"
-dest_files=["res://.godot/imported/pixil-frame-0.png-a2c3032e8be0ecd8b1783010d43da644.ctex"]
+source_file="res://ramka/guzik.png"
+dest_files=["res://.godot/imported/guzik.png-885a81758f1bffee2d587b447db7b749.ctex"]
 
 [params]
 

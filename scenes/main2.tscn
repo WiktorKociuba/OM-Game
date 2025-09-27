@@ -1,0 +1,136 @@
+[gd_scene load_steps=11 format=4 uid="uid://dx4ilu6fg5uvb"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://di3d0fwl8762s" path="res://characters/main character.png" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://b7k6opr6wn12b" path="res://txt/groundtxt.png" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://bgaex6o77ja7c" path="res://ramka/ramka.png" id="4_o6xl0"]
+[ext_resource type="Script" uid="uid://dhxpmwgjbg6gk" path="res://scenes/titlebar.gd" id="5_tipki"]
+[ext_resource type="Texture2D" uid="uid://iljqovgo5mjn" path="res://ramka/guzik.png" id="6_85g3d"]
+[ext_resource type="Texture2D" uid="uid://3kbom2wwyb2a" path="res://life/life.png" id="7_o6xl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+size = Vector2(74.5, 88.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
+texture = ExtResource("3_sugp2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tbgi4"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jyhfs")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+z_index = 1
+script = ExtResource("1_0wfyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(0.1250019, -6.62208)
+scale = Vector2(2.2578125, 2.679505)
+texture = ExtResource("2_tefeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.75, -8.75)
+shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Ground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAEAPv/AAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAP7/AAAAAAAAAAAEAP3/AAAAAAAAAAADAP3/AAAAAAAAAAACAP//AAAAAAAAAAAEAP//AAAAAAAAAAADAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAABAP7/AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAP3/AAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAABAP3/AAAAAAAAAAD//wAAAAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD///3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAABAPv/AAAAAAAAAAABAPr/AAAAAAAAAAAAAPr/AAAAAAAAAAD///r/AAAAAAAAAAD///v/AAAAAAAAAAD+//z/AAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAAAAPv/AAAAAAAAAAD+//v/AAAAAAAAAAD9//v/AAAAAAAAAAD9//z/AAAAAAAAAAD8//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAD8//z/AAAAAAAAAAD7//3/AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD8/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tbgi4")
+
+[node name="titlebar" type="TextureButton" parent="."]
+offset_left = 124.0
+offset_top = -143.0
+offset_right = 252.0
+offset_bottom = -15.0
+scale = Vector2(8.121981, 7.6914864)
+texture_normal = ExtResource("4_o6xl0")
+script = ExtResource("5_tipki")
+
+[node name="Sprite2D" type="Sprite2D" parent="titlebar"]
+scale = Vector2(2, 2)
+
+[node name="close button" type="TextureButton" parent="titlebar"]
+layout_mode = 0
+offset_left = 20.827427
+offset_top = 16.516724
+offset_right = 148.82742
+offset_bottom = 144.51672
+scale = Vector2(0.6633499, 0.83511776)
+texture_normal = ExtResource("6_85g3d")
+
+[node name="Sprite2D" type="Sprite2D" parent="titlebar/close button"]
+scale = Vector2(0.97478694, 0.59226173)
+
+[node name="hearts" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 166.0
+offset_top = -102.0
+offset_right = 206.0
+offset_bottom = -62.0
+grow_horizontal = 0
+scale = Vector2(6.7836814, 2.230612)
+
+[node name="h1" type="TextureRect" parent="hearts"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3521616, 1)
+texture = ExtResource("7_o6xl0")
+
+[node name="h2" type="TextureRect" parent="hearts"]
+layout_mode = 0
+offset_left = 25.381279
+offset_right = 65.38128
+offset_bottom = 40.000008
+scale = Vector2(0.37786448, 1.0495347)
+texture = ExtResource("7_o6xl0")
+
+[node name="h3" type="TextureRect" parent="hearts"]
+layout_mode = 0
+offset_left = 12.340073
+offset_top = -1.002099
+offset_right = 52.340073
+offset_bottom = 38.997902
+scale = Vector2(0.3614171, 1.0743022)
+texture = ExtResource("7_o6xl0")
