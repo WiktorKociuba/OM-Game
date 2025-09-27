@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://dx4ilu6fg5uvb"]
 
-[ext_resource type="Script" uid="uid://dv8yrynwv0rjm" path="res://player.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dfqvgevce4wsl" path="res://player.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://bwms8fxo1bqvy" path="res://characters/M C 1.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://bk5mm6o0i4wn1" path="res://txt/pixil-frame-0-2.png" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://m6tbndu8kkjw" path="res://scenes/area_attack.gd" id="3_tbgi4"]
@@ -166,7 +166,7 @@ script = ExtResource("1_0wfyh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 scale = Vector2(0.4861592, 0.4861592)
 sprite_frames = SubResource("SpriteFrames_o6xl0")
-animation = &"idle"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1.5, 19.984253)
