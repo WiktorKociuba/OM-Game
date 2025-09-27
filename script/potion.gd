@@ -13,3 +13,4 @@ func _on_body_entered(body):
 		GameState.add_points(points_value)
 		# usuwamy potkę z mapy
 		queue_free()
+		print(GameState.level, GameState.points)
