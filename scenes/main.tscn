@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bk5mm6o0i4wn1" path="res://txt/pixil-frame-0-2.png" id="3_sugp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-size = Vector2(54, 84)
+size = Vector2(54, 33)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
 texture = ExtResource("3_sugp2")
@@ -106,6 +106,7 @@ sources/1 = SubResource("TileSetAtlasSource_jyhfs")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
+position = Vector2(1645, 1567)
 script = ExtResource("1_0wfyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -114,7 +115,7 @@ scale = Vector2(2.2578125, 2.679505)
 texture = ExtResource("2_0wfyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-3, -8)
+position = Vector2(-3, 17.5)
 shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
