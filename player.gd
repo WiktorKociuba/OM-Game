@@ -2,11 +2,16 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
+@export var health = 5
 
 func _input(event):
 	if event.is_action_pressed("attack"):
 		$AnimatedSprite2D.play("attack")
+
+func _process(delta: float) -> void:
+	if health < 5:
 		
+	print(health)
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.

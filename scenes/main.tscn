@@ -164,6 +164,7 @@ sources/1 = SubResource("TileSetAtlasSource_jyhfs")
 z_index = 1
 position = Vector2(1645, 1567)
 script = ExtResource("1_0wfyh")
+health = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 scale = Vector2(0.4861592, 0.4861592)

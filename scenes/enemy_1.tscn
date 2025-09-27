@@ -10,6 +10,7 @@ size = Vector2(105, 125)
 size = Vector2(104, 123)
 
 [node name="Enemy1" type="RigidBody2D"]
+mass = 0.001
 script = ExtResource("1_a1412")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,7 +23,7 @@ scale = Vector2(0.56030077, 0.56030077)
 shape = SubResource("RectangleShape2D_a1412")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(0.56030077, 0.56030077)
+scale = Vector2(0.5550422, 0.54400176)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-8, -0.5)

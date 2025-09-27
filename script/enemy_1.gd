@@ -27,3 +27,5 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		print("Decrease health")
+		body.health -= 1
+		await get_tree().create_timer(3.0).timeout
