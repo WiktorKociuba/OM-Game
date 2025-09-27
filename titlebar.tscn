@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://26pkdyoiwumj"]
+
+[ext_resource type="Texture2D" uid="uid://bgaex6o77ja7c" path="res://ramka/ramka.png" id="1_fslcg"]
+[ext_resource type="Script" uid="uid://dhxpmwgjbg6gk" path="res://scenes/titlebar.gd" id="2_p88lf"]
+[ext_resource type="Texture2D" uid="uid://iljqovgo5mjn" path="res://ramka/guzik.png" id="3_l5o64"]
+[ext_resource type="Texture2D" uid="uid://3kbom2wwyb2a" path="res://life/life.png" id="4_holu6"]
+[ext_resource type="PackedScene" uid="uid://cgdb6yujyqhqs" path="res://scenes/enemy.tscn" id="5_8e0rh"]
+
+[node name="titlebar" type="TextureButton"]
+offset_left = 124.0
+offset_top = -143.0
+offset_right = 252.0
+offset_bottom = -15.0
+scale = Vector2(8.121981, 7.6914864)
+texture_normal = ExtResource("1_fslcg")
+script = ExtResource("2_p88lf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="close button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 20.827427
+offset_top = 16.516724
+offset_right = 148.82742
+offset_bottom = 144.51672
+scale = Vector2(0.6633499, 0.83511776)
+texture_normal = ExtResource("3_l5o64")
+
+[node name="Sprite2D" type="Sprite2D" parent="close button"]
+scale = Vector2(0.97478694, 0.59226173)
+
+[node name="hearts" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 166.0
+offset_top = -102.0
+offset_right = 206.0
+offset_bottom = -62.0
+grow_horizontal = 0
+scale = Vector2(6.7836814, 2.230612)
+
+[node name="h1" type="TextureRect" parent="hearts"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3521616, 1)
+texture = ExtResource("4_holu6")
+
+[node name="h2" type="TextureRect" parent="hearts"]
+layout_mode = 0
+offset_left = 25.381279
+offset_right = 65.38128
+offset_bottom = 40.000008
+scale = Vector2(0.37786448, 1.0495347)
+texture = ExtResource("4_holu6")
+
+[node name="h3" type="TextureRect" parent="hearts"]
+layout_mode = 0
+offset_left = 12.340073
+offset_top = -1.002099
+offset_right = 52.340073
+offset_bottom = 38.997902
+scale = Vector2(0.3614171, 1.0743022)
+texture = ExtResource("4_holu6")
+
+[node name="Node2D" parent="." instance=ExtResource("5_8e0rh")]
