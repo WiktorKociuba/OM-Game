@@ -1,25 +1,73 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx4ilu6fg5uvb"]
+[gd_scene load_steps=7 format=4 uid="uid://dx4ilu6fg5uvb"]
 
 [ext_resource type="Script" uid="uid://dv8yrynwv0rjm" path="res://player.gd" id="1_0wfyh"]
-[ext_resource type="Texture2D" uid="uid://bo8aicmfnhm0d" path="res://icon.svg" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://di3d0fwl8762s" path="res://characters/pixil-frame-0.png" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://b7k6opr6wn12b" path="res://txt/groundtxt.png" id="3_sugp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-size = Vector2(74, 74)
+size = Vector2(74.5, 88.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
+texture = ExtResource("3_sugp2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tbgi4"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jyhfs")
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
+z_index = 1
 script = ExtResource("1_0wfyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(27, 27)
-scale = Vector2(0.578125, 0.578125)
-texture = ExtResource("2_sugp2")
+position = Vector2(0.1250019, -6.62208)
+scale = Vector2(2.2578125, 2.679505)
+texture = ExtResource("2_0wfyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(27, 27)
+position = Vector2(-0.75, -8.75)
 shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Ground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAEAPv/AAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAP7/AAAAAAAAAAAEAP3/AAAAAAAAAAADAP3/AAAAAAAAAAACAP//AAAAAAAAAAAEAP//AAAAAAAAAAADAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAABAP7/AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAP3/AAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAABAP3/AAAAAAAAAAD//wAAAAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD///3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAABAPv/AAAAAAAAAAABAPr/AAAAAAAAAAAAAPr/AAAAAAAAAAD///r/AAAAAAAAAAD///v/AAAAAAAAAAD+//z/AAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAAAAPv/AAAAAAAAAAD+//v/AAAAAAAAAAD9//v/AAAAAAAAAAD9//z/AAAAAAAAAAD8//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAD8//z/AAAAAAAAAAD7//3/AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD8/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tbgi4")
