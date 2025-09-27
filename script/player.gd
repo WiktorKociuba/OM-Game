@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 @export var enemyScene: PackedScene
 @export var spawnRadius: float = 200.0
+var bossFight = false
 
 func _input(event):
 	if event.is_action_pressed("attack"):
@@ -11,6 +12,8 @@ func _input(event):
 		
 
 func spawnEnemy():
+	if bossFight:
+		pass
 	var rng = RandomNumberGenerator.new()
 	var angle = rng.randf_range(0,TAU)
 	var distance = rng.randf_range(0,spawnRadius)
