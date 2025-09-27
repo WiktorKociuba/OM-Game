@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 			healthRestore = Time.get_ticks_msec()
 			health += 1
 	if health <= 0:
-		pass
+		get_tree().change_scene_to_file("res://scenes/main.tscn")
 	for i in range(maxHealth):
 		var heartNode = $Camera2D/HealthBar.get_child(i)
 		if i < health:
