@@ -1,3 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+/Python/gmail/quickstart/credentials.json
+/Python/venv
+/Python/tokenN.json
