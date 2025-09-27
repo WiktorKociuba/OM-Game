@@ -4,8 +4,22 @@ extends CharacterBody2D
 const SPEED = 300.0
 @export var health = 5
 @export var hearthSprite: Texture2D
+@export var enemyScene: PackedScene
+@export var spawnRadius: float = 500.0
+
 var maxHealth = 5
 var healthRestore = 0
+var enemyspawn = 0
+
+func spawnEnemy():
+	var rng = RandomNumberGenerator.new()
+	var angle = rng.randf_range(0,TAU)
+	var distance = rng.randf_range(200,spawnRadius)
+	var offset = Vector2(cos(angle), sin(angle)) * distance
+	var spawnPos = global_position + offset
+	var enemy = enemyScene.instantiate()
+	enemy.global_position = spawnPos
+	get_tree().current_scene.add_child(enemy)
 
 func _input(event):
 	if event.is_action_pressed("attack"):
@@ -24,6 +38,9 @@ func _process(delta: float) -> void:
 			heartNode.visible = true
 		else:
 			heartNode.visible = false
+	if Time.get_ticks_msec() - enemyspawn >= 10000:
+		enemyspawn = Time.get_ticks_msec()
+		spawnEnemy()
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.

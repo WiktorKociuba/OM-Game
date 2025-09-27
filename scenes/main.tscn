@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dx4ilu6fg5uvb"]
+[gd_scene load_steps=18 format=4 uid="uid://dx4ilu6fg5uvb"]
 
 [ext_resource type="Script" uid="uid://dfqvgevce4wsl" path="res://player.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://3kbom2wwyb2a" path="res://life/life.png" id="1_ya4ey"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bt1yrry8k1wad" path="res://scenes/enemy_1.tscn" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://gxlueo7r416q" path="res://characters/M C 2.png" id="5_choun"]
 [ext_resource type="Texture2D" uid="uid://d3oa6ct64dklg" path="res://characters/M C 4.png" id="6_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://dv2qomtbp3f70" path="res://scenes/potion.tscn" id="10_choun"]
-[ext_resource type="PackedScene" uid="uid://cuitn4dcoev0v" path="res://scenes/HUD.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" path="res://scenes/potion.tscn" id="10_choun"]
+[ext_resource type="PackedScene" path="res://scenes/HUD.tscn" id="11_ya4ey"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6xl0"]
 animations = [{
@@ -166,6 +166,7 @@ z_index = 1
 position = Vector2(1645, 1567)
 script = ExtResource("1_0wfyh")
 hearthSprite = ExtResource("1_ya4ey")
+enemyScene = ExtResource("4_jyhfs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 scale = Vector2(0.4861592, 0.4861592)
@@ -217,11 +218,6 @@ tile_map_data = PackedByteArray("AAAAAP//AQABAAAAAAAAAAAAAQABAAAAAAAAAAEAAQABAAA
 tile_set = SubResource("TileSet_tbgi4")
 
 [node name="Enemies" type="Node" parent="."]
-
-[node name="Enemy1" parent="Enemies" instance=ExtResource("4_jyhfs")]
-
-[node name="Enemy2" parent="Enemies" instance=ExtResource("4_jyhfs")]
-position = Vector2(1700, 1656)
 
 [node name="Potion" parent="." instance=ExtResource("10_choun")]
 position = Vector2(1771, 1563)

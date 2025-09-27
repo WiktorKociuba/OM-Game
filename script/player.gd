@@ -2,17 +2,29 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
+@export var enemyScene: PackedScene
+@export var spawnRadius: float = 200.0
 
 func _input(event):
 	if event.is_action_pressed("attack"):
 		$AnimatedSprite2D.play("attack")
 		
 
+func spawnEnemy():
+	var rng = RandomNumberGenerator.new()
+	var angle = rng.randf_range(0,TAU)
+	var distance = rng.randf_range(0,spawnRadius)
+	var offset = Vector2(cos(angle), sin(angle)) * distance
+	var spawnPos = global_position + offset
+	var enemy = enemyScene.instantiate()
+	enemy.global_position = spawnPos
+	get_tree().current_scene.add_child(enemy)
+	
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction_x := Input.get_axis("left", "right")
@@ -35,5 +47,3 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("walk")
 
 	move_and_slide()
-
-		
