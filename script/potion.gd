@@ -1,12 +1,15 @@
 extends Area2D
 
-@export var points_value: int = 20
+@export var points_value: int = 100
 
 func _ready():
+	# Po wejściu w potkę wywoła się _on_body_entered
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
-	if body.name == "Player":  # upewnij się, że gracz nazywa się "Player"
-		var gs = get_node("/root/GameState")
-		gs.add_points(points_value)
-		queue_free()  # usuń potkę po zebraniu
+	# sprawdzamy, czy to gracz
+	if body.name == "Player":  
+		# dodajemy punkty do GameState (singleton)
+		GameState.add_points(points_value)
+		# usuwamy potkę z mapy
+		queue_free()
