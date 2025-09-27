@@ -1,12 +1,28 @@
 [gd_scene load_steps=12 format=4 uid="uid://dx4ilu6fg5uvb"]
 
-[ext_resource type="Script" uid="uid://dv8yrynwv0rjm" path="res://script/player.gd" id="1_0wfyh"]
-[ext_resource type="Script" uid="uid://cjbq575mi26xj" path="res://scenes/potion.gd" id="1_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://di3d0fwl8762s" path="res://characters/main character.png" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://dv8yrynwv0rjm" path="res://player.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://bwms8fxo1bqvy" path="res://characters/M C 1.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://bk5mm6o0i4wn1" path="res://txt/pixil-frame-0-2.png" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://m6tbndu8kkjw" path="res://scenes/area_attack.gd" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://b0mviq2feoru8" path="res://characters/macha mieczem2.png" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bt1yrry8k1wad" path="res://scenes/enemy_1.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dv2qomtbp3f70" path="res://scenes/potion.tscn" id="6_tefeu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6xl0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tefeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tefeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tefeu")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(54, 33)
@@ -116,10 +132,9 @@ z_index = 1
 position = Vector2(1645, 1567)
 script = ExtResource("1_0wfyh")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(0.1250019, -6.62208)
-scale = Vector2(2.2578125, 2.679505)
-texture = ExtResource("2_0wfyh")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_o6xl0")
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-3, 17.5)
@@ -144,9 +159,5 @@ tile_set = SubResource("TileSet_tbgi4")
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("4_jyhfs")]
 position = Vector2(1700, 1656)
-
-[node name="Potion" parent="." instance=ExtResource("6_tefeu")]
-position = Vector2(1779, 1996)
-script = ExtResource("1_jyhfs")
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
