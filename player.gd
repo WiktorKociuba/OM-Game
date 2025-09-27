@@ -10,7 +10,7 @@ func _input(event):
 
 func _process(delta: float) -> void:
 	if health < 5:
-		
+		pass
 	print(health)
 
 func _physics_process(delta: float) -> void:
