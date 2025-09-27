@@ -3,6 +3,9 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 @export var health = 5
+@export var hearthSprite: Texture2D
+var maxHealth = 5
+var healthRestore = 0
 
 func _input(event):
 	if event.is_action_pressed("attack"):
@@ -10,8 +13,17 @@ func _input(event):
 
 func _process(delta: float) -> void:
 	if health < 5:
+		if Time.get_ticks_msec() - healthRestore >= 30000:
+			healthRestore = Time.get_ticks_msec()
+			health += 1
+	if health <= 0:
 		pass
-	print(health)
+	for i in range(maxHealth):
+		var heartNode = $Camera2D/HealthBar.get_child(i)
+		if i < health:
+			heartNode.visible = true
+		else:
+			heartNode.visible = false
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
