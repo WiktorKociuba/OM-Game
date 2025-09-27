@@ -13,13 +13,16 @@ size = Vector2(104, 123)
 script = ExtResource("1_a1412")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.56030077, 0.56030077)
 texture = ExtResource("1_tcmaw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8.5, 0.5)
+position = Vector2(-5, 0)
+scale = Vector2(0.56030077, 0.56030077)
 shape = SubResource("RectangleShape2D_a1412")
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.56030077, 0.56030077)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-8, -0.5)
