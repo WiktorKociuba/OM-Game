@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://gxlueo7r416q" path="res://characters/M C 2.png" id="5_choun"]
 [ext_resource type="PackedScene" uid="uid://dv2qomtbp3f70" path="res://scenes/potion.tscn" id="6_tefeu"]
 [ext_resource type="Texture2D" uid="uid://d3oa6ct64dklg" path="res://characters/M C 4.png" id="6_ya4ey"]
+[ext_resource type="PackedScene" path="res://scenes/potion.tscn" id="10_choun"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6xl0"]
 animations = [{
@@ -195,7 +196,12 @@ position = Vector2(1844, 1326)
 [node name="Enemy2" parent="Enemies" instance=ExtResource("4_jyhfs")]
 position = Vector2(1700, 1656)
 
+<<<<<<< HEAD
 [node name="Potion" parent="." instance=ExtResource("6_tefeu")]
 position = Vector2(1635, 2172)
+=======
+[node name="Potion" parent="." instance=ExtResource("10_choun")]
+position = Vector2(1771, 1563)
+>>>>>>> d86e540a1253a67cd95b8f788558a59b4fce2a5d
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
