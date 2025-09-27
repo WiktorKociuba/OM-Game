@@ -1,14 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://dx4ilu6fg5uvb"]
+[gd_scene load_steps=12 format=4 uid="uid://dx4ilu6fg5uvb"]
 
-[ext_resource type="Script" uid="uid://dfqvgevce4wsl" path="res://player.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dv8yrynwv0rjm" path="res://player.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://bwms8fxo1bqvy" path="res://characters/M C 1.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://bk5mm6o0i4wn1" path="res://txt/pixil-frame-0-2.png" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://m6tbndu8kkjw" path="res://scenes/area_attack.gd" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://b0mviq2feoru8" path="res://characters/macha mieczem2.png" id="3_tefeu"]
-[ext_resource type="Texture2D" uid="uid://bb86dqbvl6eyv" path="res://characters/M C 3.png" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://bt1yrry8k1wad" path="res://scenes/enemy_1.tscn" id="4_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://gxlueo7r416q" path="res://characters/M C 2.png" id="5_choun"]
-[ext_resource type="Texture2D" uid="uid://d3oa6ct64dklg" path="res://characters/M C 4.png" id="6_ya4ey"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6xl0"]
 animations = [{
@@ -25,38 +22,10 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 5.0,
-"texture": ExtResource("2_tefeu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_85g3d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_choun")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ya4ey")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_tefeu")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_ya4ey")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-size = Vector2(40.64792, 43.885254)
+size = Vector2(54, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 size = Vector2(136, 147)
@@ -164,13 +133,11 @@ position = Vector2(1645, 1567)
 script = ExtResource("1_0wfyh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-scale = Vector2(0.4861592, 0.4861592)
 sprite_frames = SubResource("SpriteFrames_o6xl0")
 animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(1.5, 19.984253)
-scale = Vector2(0.86105174, 0.45645246)
+position = Vector2(-3, 17.5)
 shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
