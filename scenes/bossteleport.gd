@@ -5,4 +5,4 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		body.position = Vector2(6857.0, 11207.0)
+		body.position = Vector2(4595.0,11810.0)

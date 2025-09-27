@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	var player = get_node("/root/Node2D/Player")
 	var playerPos = player.position
 	if hit_count >= 3:
+		GameState.add_points(200)
 		queue_free()
 	if player and not hit:
 		var direction = (playerPos-position).normalized()
